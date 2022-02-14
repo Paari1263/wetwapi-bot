@@ -6,12 +6,12 @@ import os
 from twilio.rest import Client 
 from twilio.http.http_client import TwilioHttpClient
 
-api_key = "e476c0984403f0f81fd86e758b52c235"
-account_sid = "AC4dc7e5a723d650f89ade64ad79f8054c"
-auth_token = "cf7d57a12a7eb5b7dc78404c0f285dec"
+api_key = "THE API KEY"
+account_sid = "TWILIO ACCOUNT SID"
+auth_token = "TWILIO AUTH TOKEN"
 parameters = {
-    "lat":13,
-    "lon":80,
+    "lat":"YOUR LOCATION'S LATITUDE",
+    "lon":"YOUR LOCATION'S LONGTITUDE",
     "exclude":"daily",
     "appid":api_key
 }
@@ -32,8 +32,8 @@ if(will_rain):
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-        to="+918870166755", 
-        from_="+18126338878",
+        to="YOUR NUMBER", 
+        from_="TWILIO NUMBER",
         body="Bring an Umbrella !"
     )
     print(message.status)
